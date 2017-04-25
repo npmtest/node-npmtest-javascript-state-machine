@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-javascript-state-machine/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-javascript-state-machine/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-javascript-state-machine/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-javascript-state-machine/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-javascript-state-machine/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-javascript-state-machine/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-javascript-state-machine/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-javascript-state-machine/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-javascript-state-machine/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-javascript-state-machine/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-javascript-state-machine/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-javascript-state-machine/build/coverage.html/index.html)
 
@@ -35,31 +35,50 @@
 ```json
 
 {
-    "name": "javascript-state-machine",
+    "author": {
+        "name": "Jake Gordon"
+    },
+    "bugs": {
+        "url": "https://github.com/jakesgordon/javascript-state-machine/issues"
+    },
+    "dependencies": {},
     "description": "A simple finite state machine library",
+    "devDependencies": {
+        "local-web-server": "~1.2.6",
+        "qunit": "~0.9.1",
+        "uglify-js": "^2.7.4"
+    },
+    "directories": {},
+    "dist": {
+        "shasum": "d8be31ec38f24ac1a1832f0b672fc3cd5f79c96e",
+        "tarball": "https://registry.npmjs.org/javascript-state-machine/-/javascript-state-machine-2.4.0.tgz"
+    },
+    "gitHead": "c7538b4fce486a84de7a456b72ce7dc15201c818",
     "homepage": "https://github.com/jakesgordon/javascript-state-machine",
     "keywords": [
         "state machine",
         "server",
         "client"
     ],
-    "author": "Jake Gordon <jake@codeincomplete.com>",
+    "main": "state-machine.js",
+    "maintainers": [
+        {
+            "name": "jakesgordon"
+        }
+    ],
+    "name": "javascript-state-machine",
+    "optionalDependencies": {},
     "repository": {
         "type": "git",
         "url": "git://github.com/jakesgordon/javascript-state-machine.git"
     },
-    "main": "state-machine.js",
-    "devDependencies": {
-        "local-web-server": "~1.2.6",
-        "qunit": "~0.9.1",
-        "uglify-js": "^2.7.4"
+    "scripts": {
+        "minify": "uglifyjs state-machine.js --output state-machine.min.js --compress --mangle --stats",
+        "start": "ws --rewrite '/test -> /test/'",
+        "test": "node test/runner"
     },
     "version": "2.4.0",
-    "scripts": {
-        "start": "ws --rewrite '/test -> /test/'",
-        "test": "node test/runner",
-        "minify": "uglifyjs state-machine.js --output state-machine.min.js --compress --mangle --stats"
-    }
+    "bin": {}
 }
 ```
 
